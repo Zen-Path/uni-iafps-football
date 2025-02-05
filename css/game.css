@@ -1,0 +1,97 @@
+/* Resetare margini */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2b7a0b;
+}
+
+/* Container general */
+.container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Zonele pentru cărți */
+.card-zone {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-zone.left {
+    justify-content: flex-start;
+}
+
+.card-zone.right {
+    justify-content: flex-end;
+}
+
+/* Stilizare cărți */
+.card {
+    width: 80px;
+    height: 40px;
+    background-color: #ffcc00;
+    border: 2px solid #000;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: grab;
+}
+
+/* Cărți în timpul tragerii */
+.card:active {
+    cursor: grabbing;
+}
+
+/* Teren de fotbal */
+.field {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    background-color: #4caf50;
+    border: 5px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Linia de centru */
+.center-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: white;
+    transform: translateX(-50%);
+}
+
+/* Cercul de centru */
+.center-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    border: 2px solid white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
