@@ -1,0 +1,58 @@
+.landing-container {
+    display: flex;
+    flex-direction: column;
+
+    /* justify-content: center; */
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url(../assets/images/landing_background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.landing-title {
+    font-family: "Carter One", sans-serif;
+    margin: 30vh 0px 0px 0px;
+    color: white;
+    font-size: 80px;
+    text-transform: uppercase;
+}
+
+.landing-main-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    gap: 10px;
+
+    padding: 10px 20px;
+    margin: 40px 0px 0px 0px;
+    border-radius: 15px;
+
+    color: white;
+    background-image: linear-gradient(270deg, #ff5a37, #ff3778);
+}
+
+.landing-main-btn-icon {
+    max-width: 25px;
+    max-height: 25px;
+}
+
+.landing-main-btn-text {
+    font-size: 22px;
+    letter-spacing: 15%;
+    color: inherit;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.landing-main-btn-container:hover {
+    /* TODO: change to something more pleasing */
+    background: linear-gradient(280deg, #ff5a37 30%, #ff3778);
+    outline: 2px solid #ff5a37;
+}
