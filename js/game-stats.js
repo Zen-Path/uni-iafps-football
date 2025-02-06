@@ -1,4 +1,5 @@
-import { Player, PlayerStats } from "./player.js";
+import { DEFAULT_PLAYERS, Player, PlayerStats } from "./player.js";
+import { getUniqueRandomElements } from "./utils.js";
 
 const LEFT_SIDEBAR = document.body.querySelector(
     ".sidebar-container.left .player-card-sidebar",
@@ -45,16 +46,7 @@ class PlayerCard {
 }
 
 function main() {
-    const players = [...Array(10)].map((_) => {
-        const playerStats = new PlayerStats();
-        playerStats.randomize();
-        return new Player(
-            "Lionel",
-            "Messi",
-            "../assets/images/players/messi.jpg",
-            playerStats,
-        );
-    });
+    const players = getUniqueRandomElements(DEFAULT_PLAYERS, 10);
 
     players.forEach((player, i) => {
         const playerCard = new PlayerCard(player).create();
