@@ -1,97 +1,230 @@
-/* Resetare margini */
-body {
-    margin: 0;
-    padding: 0;
+:root {
+    --badge-border-radius: 20px;
+}
+
+#game-stats {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    /* align-items: center; */
+
+    width: 100vw;
+    min-width: 600px;
     height: 100vh;
-    background-color: #2b7a0b;
+
+    background: linear-gradient(45deg, #4146c4, #8d1236);
 }
 
-/* Container general */
-.container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-/* Zonele pentru cărți */
-.card-zone {
-    width: 100px;
+.primary-area {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-
-.card-zone.left {
-    justify-content: flex-start;
-}
-
-.card-zone.right {
-    justify-content: flex-end;
-}
-
-/* Stilizare cărți */
-.card {
-    width: 80px;
-    height: 40px;
-    background-color: #ffcc00;
-    border: 2px solid #000;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 16px;
+
+    width: 100%;
+}
+
+.banner {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+
+    margin: 30px 0px 0px 0px;
+}
+
+.badge {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 250px;
+
+    gap: 30px;
+}
+
+.badge.left {
+    background: linear-gradient(90deg, #a0153e 0%, #3a0816 100%);
+    border-radius: var(--badge-border-radius) 0px 0px var(--badge-border-radius);
+    padding: 20px 40px 20px 20px;
+}
+
+.badge.right {
+    background: linear-gradient(90deg, #24276e 0%, #454bd4 100%);
+    border-radius: 0px var(--badge-border-radius) var(--badge-border-radius) 0px;
+    padding: 20px 20px 20px 40px;
+}
+
+.badge p {
+    min-width: 100px;
+    /* margin: 0px 50px; */
+
+    /* text-align: center; */
+    text-transform: uppercase;
+    font-size: 25px;
     font-weight: bold;
-    cursor: grab;
 }
 
-/* Cărți în timpul tragerii */
-.card:active {
-    cursor: grabbing;
+.badge .logo {
+    max-width: 60px;
+    max-width: 60px;
+    /* margin: 20px 20px; */
 }
 
-/* Teren de fotbal */
-.field {
+.ribbon {
     position: relative;
-    width: 600px;
-    height: 400px;
-    background-color: #4caf50;
-    border: 5px solid white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #ffd700;
+    width: 130px;
+
+    margin: 0px 0px -10px 0px;
 }
 
-/* Linia de centru */
-.center-line {
+.ribbon .icon {
+    width: 60px;
+    height: 60px;
+    margin: 10px 0px 5px 0px;
+}
+
+.ribbon p {
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.ribbon:after {
     position: absolute;
-    top: 0;
+    bottom: -50px;
     left: 50%;
-    width: 2px;
-    height: 100%;
-    background-color: white;
     transform: translateX(-50%);
+
+    content: "";
+
+    border-left: 65px solid transparent;
+    border-right: 65px solid transparent;
+    border-top: 51px solid #ffd700;
+
+    filter: drop-shadow(1px 1px 15px #ffd700);
 }
 
-/* Cercul de centru */
-.center-circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 80px;
-    height: 80px;
-    border: 2px solid white;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
+.player-card-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: calc(100vh - 20px);
+    /* height: 500px; */
+    min-width: 270px;
+    margin: 10px 10px 10px 10px;
+    /* padding: 10px 0px; */
+
+    overflow-y: scroll;
+
+    border-radius: 20px;
+
+    /* display: grid; */
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+    /* gap: 20px; */
+    /* padding: 20px; */
 }
 
-.center-dot {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 8px;
-    height: 8px;
-    background-color: white;
+.player-card-sidebar.left {
+    background-color: #a0153e;
+    box-shadow: 1px 5px 15px #a0153e;
+}
+
+.player-card-sidebar.right {
+    background-color: #24276e;
+    box-shadow: 1px 5px 15px #24276e;
+}
+
+#sketch img {
+    width: 600px;
+    margin: 100px 0px 0px 0px;
+}
+
+/* CARDS */
+
+.card {
+    width: 195px;
+    border-radius: 33px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    margin: 10px 0px;
+
+    padding: 20px;
+
+    color: black;
+}
+
+.card.left {
+    background: linear-gradient(to bottom, #d04646, #fff);
+    box-shadow: 1px 2px 20px #d04646;
+}
+
+.card.right {
+    background: linear-gradient(to bottom, #454bd4, #fff);
+    box-shadow: 1px 2px 20px #454bd4;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
     border-radius: 50%;
-    transform: translate(-50%, -50%);
+    overflow: hidden;
+    border: 3px solid white;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0;
+    color: black;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    color: black;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    /* Prima coloană ocupă restul spațiului, a doua este automată */
+    font-size: 16px;
+    padding: 0 10px;
+    /* Ajustare padding general */
+    gap: 5px;
+    /* Spațiu între rânduri */
+}
+
+.stat {
+    display: contents;
+
+    /* Folosește grid-ul pentru rânduri */
+}
+
+.stat span {
+    color: black;
+}
+
+.stat span:first-child {
+    text-align: left;
+    /* Aliniere la stânga pentru text */
+    border-right: 2px solid #000000;
+}
+
+.stat span:last-child {
+    text-align: right;
+    /* Aliniere la dreapta pentru cifre */
 }
