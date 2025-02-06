@@ -1,170 +1,47 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Asistent de Fotbal</title>
-        <link rel="stylesheet" href="../css/style.css" />
-        <link rel="stylesheet" href="../css/game-stats.css" />
-        <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png" />
-    </head>
 
-    <body>
-        <main id="game-stats">
-            <div class="player-card-sidebar left">
-                <div class="card left">
-                    <div class="profile-pic">
-                        <img
-                            src="../assets/images/players/ronaldo.png"
-                            alt="Cristiano Ronaldo" />
-                    </div>
-                    <h2>Cristiano</h2>
-                    <h3>Ronaldo</h3>
-                    <div class="stats">
-                        <div class="stat">
-                            <span>ACCURACY</span>
-                            <span>98</span>
-                        </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asistent de Fotbal</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/game-stats.css" />
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png" />
+</head>
 
-                        <div class="stat">
-                            <span>REACH</span>
-                            <span>20</span>
-                        </div>
+<body>
+    <main id="game-stats">
+        <div class="sidebar-container left">
+            <div class="player-card-sidebar"></div>
+        </div>
 
-                        <div class="stat">
-                            <span>CAPTURE</span>
-                            <span>30</span>
-                        </div>
-
-                        <div class="stat">
-                            <span>BLOCK</span>
-                            <span>50</span>
-                        </div>
-                    </div>
+        <div class="primary-area">
+            <div class="banner">
+                <div class="badge left">
+                    <img class="logo" src="../assets/images/teams/real-madrid.png" alt="Team logo" />
+                    <p>Paris Saint-Germain</p>
                 </div>
-                <div class="card left">
-                    <div class="profile-pic">
-                        <img
-                            src="../assets/images/players/ronaldo.png"
-                            alt="Cristiano Ronaldo" />
-                    </div>
-                    <h2>Cristiano</h2>
-                    <h3>Ronaldo</h3>
-                    <div class="stats">
-                        <div class="stat">
-                            <span>ACCURACY</span>
-                            <span>98</span>
-                        </div>
-
-                        <div class="stat">
-                            <span>REACH</span>
-                            <span>20</span>
-                        </div>
-
-                        <div class="stat">
-                            <span>CAPTURE</span>
-                            <span>30</span>
-                        </div>
-
-                        <div class="stat">
-                            <span>BLOCK</span>
-                            <span>50</span>
-                        </div>
-                    </div>
+                <div class="ribbon">
+                    <img class="icon" src="../assets/icons/icon_gold-ball.png" alt="Gold ball" />
+                    <p id="team-statistic">80:20</p>
+                </div>
+                <div class="badge right">
+                    <p>Barcelona</p>
+                    <img class="logo" src="../assets/images/teams/barcelona.png" alt="Team logo" />
                 </div>
             </div>
-
-            <div class="primary-area">
-                <div class="banner">
-                    <div class="badge left">
-                        <img
-                            class="logo"
-                            src="../assets/images/teams/real-madrid.png"
-                            alt="Team logo" />
-                        <p>Real Madrid</p>
-                    </div>
-                    <div class="ribbon">
-                        <img
-                            class="icon"
-                            src="../assets/icons/icon_gold-ball.png"
-                            alt="Gold ball" />
-                        <p>80:20</p>
-                    </div>
-                    <div class="badge right">
-                        <p>Barcelona</p>
-                        <img
-                            class="logo"
-                            src="../assets/images/teams/barcelona.png"
-                            alt="Team logo" />
-                    </div>
-                </div>
-                <div id="sketch">
-                    <img src="../assets/images/placeholder_game-stats.png" alt="" />
-                </div>
+            <div id="sketch">
+                <img src="../assets/images/placeholder_game-stats.png" alt="" />
             </div>
+        </div>
 
-            <div class="player-card-sidebar right">
-                <div class="card right">
-                    <div class="profile-pic">
-                        <img
-                            src="../assets/images/players/messi.jpg"
-                            alt="Cristiano Ronaldo" />
-                    </div>
-                    <h2>Lionel</h2>
-                    <h3>Messi</h3>
-                    <div class="stats">
-                        <div class="stat">
-                            <span>ACCURACY</span>
-                            <span>98</span>
-                        </div>
+        <div class="sidebar-container right">
+            <div class="player-card-sidebar"></div>
+        </div>
+    </main>
 
-                        <div class="stat">
-                            <span>REACH</span>
-                            <span>20</span>
-                        </div>
+    <script src="../js/game-stats.js" type="module"></script>
+</body>
 
-                        <div class="stat">
-                            <span>CAPTURE</span>
-                            <span>30</span>
-                        </div>
-
-                        <div class="stat">
-                            <span>BLOCK</span>
-                            <span>50</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card right">
-                    <div class="profile-pic">
-                        <img
-                            src="../assets/images/players/messi.jpg"
-                            alt="Cristiano Ronaldo" />
-                    </div>
-                    <h2>Lionel</h2>
-                    <h3>Messi</h3>
-                    <div class="stats">
-                        <div class="stat">
-                            <span>ACCURACY</span>
-                            <span>98</span>
-                        </div>
-
-                        <div class="stat">
-                            <span>REACH</span>
-                            <span>20</span>
-                        </div>
-
-                        <div class="stat">
-                            <span>CAPTURE</span>
-                            <span>30</span>
-                        </div>
-
-                        <div class="stat">
-                            <span>BLOCK</span>
-                            <span>50</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </body>
 </html>
