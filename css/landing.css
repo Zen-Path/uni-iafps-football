@@ -12,9 +12,9 @@
     background-position: center;
 }
 
-#landing h1 {
+h1 {
     font-family: "Carter One", sans-serif;
-    font-size: 80px;
+    font-size: min(120px, 15vh);
     text-align: center;
     text-transform: uppercase;
 
@@ -23,7 +23,7 @@
     color: white;
 }
 
-#landing .primary-btn {
+.primary-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,25 +39,25 @@
     transition: transform 0.2s ease;
 }
 
-#landing .primary-btn:hover {
+.primary-btn:hover {
     transform: scale(1.2);
 }
 
-#landing .primary-btn:active {
+.primary-btn:active {
     transform: scale(0.95);
 }
 
-#landing .primary-btn .icon {
+.primary-btn .icon {
     max-width: 25px;
     max-height: 25px;
     transition: transform 0.5s ease;
 }
 
-#landing .primary-btn:hover .icon {
+.primary-btn:hover .icon {
     transform: rotate(180deg);
 }
 
-#landing .primary-btn p {
+.primary-btn p {
     font-size: 20px;
     letter-spacing: 10%;
     text-transform: uppercase;
