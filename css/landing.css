@@ -1,11 +1,10 @@
-.landing-container {
+#landing {
     display: flex;
     flex-direction: column;
-
-    /* justify-content: center; */
     align-items: center;
 
     width: 100vw;
+    min-width: 600px;
     height: 100vh;
 
     background-image: url(../assets/images/landing_background.jpg);
@@ -13,46 +12,54 @@
     background-position: center;
 }
 
-.landing-title {
+#landing h1 {
     font-family: "Carter One", sans-serif;
-    margin: 30vh 0px 0px 0px;
-    color: white;
     font-size: 80px;
+    text-align: center;
     text-transform: uppercase;
+
+    margin: 30vh 0px 0px 0px;
+    user-select: none;
 }
 
-.landing-main-btn-container {
+#landing .primary-btn {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    cursor: pointer;
-
     gap: 10px;
-
     padding: 10px 20px;
     margin: 40px 0px 0px 0px;
     border-radius: 15px;
 
-    color: white;
-    background-image: linear-gradient(270deg, #ff5a37, #ff3778);
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    box-shadow: 0px 10px 10px rgba(255, 0, 0, 0.2);
+
+    transition: transform 0.2s ease;
 }
 
-.landing-main-btn-icon {
+#landing .primary-btn:hover {
+    transform: scale(1.2);
+}
+
+#landing .primary-btn:active {
+    transform: scale(0.95);
+}
+
+#landing .primary-btn .icon {
     max-width: 25px;
     max-height: 25px;
+    transition: transform 0.5s ease;
 }
 
-.landing-main-btn-text {
-    font-size: 22px;
-    letter-spacing: 15%;
-    color: inherit;
+#landing .primary-btn:hover .icon {
+    transform: rotate(180deg);
+}
+
+#landing .primary-btn p {
+    font-size: 20px;
+    letter-spacing: 10%;
     text-transform: uppercase;
     font-weight: bold;
-}
-
-.landing-main-btn-container:hover {
-    /* TODO: change to something more pleasing */
-    background: linear-gradient(280deg, #ff5a37 30%, #ff3778);
-    outline: 2px solid #ff5a37;
+    user-select: none;
 }
