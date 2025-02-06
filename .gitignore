@@ -1,3 +1,7 @@
+pages/test*.html
+css/test*.html
+js/test*.html
+
 # Logs
 logs
 *.log
