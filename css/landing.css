@@ -20,6 +20,7 @@
 
     margin: 30vh 0px 0px 0px;
     user-select: none;
+    color: white;
 }
 
 #landing .primary-btn {
@@ -62,4 +63,5 @@
     text-transform: uppercase;
     font-weight: bold;
     user-select: none;
+    color: white;
 }
