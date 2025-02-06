@@ -14,9 +14,9 @@ var teams = [...document.body.querySelectorAll(".club.text-left")].map((teamDiv)
 console.log(
     teams
         .map((team) => {
-            return `new Team("${team.name}", new TeamLogo(_TEAM_LOGO_DIR + "${team.name
+            return `new Team("${team.name}", "${team.name
                 .toLowerCase()
-                .replaceAll(" ", "-")}.png", "${team.logo}"))`;
+                .replaceAll(" ", "-")}.png")`;
         })
         .join(",\n"),
 );
