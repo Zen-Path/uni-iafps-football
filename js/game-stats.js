@@ -123,6 +123,10 @@ function main() {
         const playerCard = new PlayerCard(player);
         const playerCardElem = playerCard.create();
 
+        playerCardElem.addEventListener("click", () => {
+            teamBanner.updateSuccessRate();
+        });
+
         if (i < players.length / 2) {
             LEFT_SIDEBAR.appendChild(playerCardElem);
         } else {
