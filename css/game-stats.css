@@ -106,6 +106,7 @@ body {
     color: black;
     font-size: 24px;
     font-weight: bold;
+    user-select: none;
 }
 
 .ribbon:after {
@@ -199,6 +200,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    user-select: none;
 }
 
 .stat .description {
