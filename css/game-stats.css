@@ -144,7 +144,7 @@ body {
 
     gap: 20px;
 
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .sidebar-container.left {
