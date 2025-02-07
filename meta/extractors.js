@@ -36,12 +36,18 @@ console.log(
 // PLAYERS
 
 // Source: https://www.footballcritic.com/players
-var players = [...document.body.querySelector(".ais-hits").children].map((playerDiv) => {
-    return {
-        photo: playerDiv.querySelector(".player img").src,
-        name: playerDiv.querySelector(".name a").textContent,
-    };
-});
+var players = [...document.body.querySelector(".ais-hits").children]
+    .map((playerDiv) => {
+        const name = playerDiv.querySelector(".name a").textContent;
+        if (name.split(" ").length !== 2) {
+            return null;
+        }
+        return {
+            photo: playerDiv.querySelector(".player img").src,
+            name: name,
+        };
+    })
+    .filter(Boolean);
 
 var playerImages = players
     .map(
@@ -49,7 +55,7 @@ var playerImages = players
             `${player.photo}\n\tout=${player.name
                 .trim()
                 .toLowerCase()
-                .replace(" ", "-")}.png`,
+                .replaceAll(" ", "-")}.png`,
     )
     .join("\n");
 
@@ -58,10 +64,10 @@ var playerNames = players
         (player) =>
             `new Player("${player.name.split(" ")[0]}", "${player.name
                 .split(" ")
-                .slice(1)}", "../images/players/${player.name
+                .slice(1)}", "../assets/images/players/${player.name
                 .trim()
                 .toLowerCase()
-                .replace(" ", "-")}.png"),`,
+                .replaceAll(" ", "-")}.png"),`,
     )
     .join("\n");
 
