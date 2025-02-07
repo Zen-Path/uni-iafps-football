@@ -15,6 +15,14 @@ class Team {
 
         this.side = side;
         this.color = color ? color : this.COLORS[this.side % 2];
+
+        this.successRate = 50.0;
+    }
+
+    calculateSuccessRate() {
+        const successRate = Math.random() * 100;
+        this.successRate = successRate;
+        return successRate;
     }
 }
 
