@@ -24,7 +24,8 @@ class PlayerCard {
             <img
                 class="profile-picture"
                 src="${this.player.profilePicturePath}"
-                alt="${this.player.fullName}">
+                alt="${this.player.fullName}"
+                draggable="false" >
 
             <p class="first-name">${this.player.firstName}</p>
             <p class="last-name">${this.player.lastName}</p>
@@ -65,14 +66,16 @@ class TeamBanner {
                 <img
                     class="logo"
                     src="${this.team1.logoPath}"
-                    alt="${this.team1.name} Logo" />
+                    alt="${this.team1.name} Logo"
+                    draggable="false" >
                 <p>${this.team1.name}</p>
             </div>
             <div class="ribbon">
                 <img
                     class="icon"
                     src="../assets/icons/icon_gold-ball.png"
-                    alt="Gold ball" />
+                    alt="Gold ball"
+                    draggable="false">
                 <p id="${this.TEAM_STATISTIC_ELEM_ID}">${this._composeSuccessRate(
                     this.team1.successRate,
                     this.team2.successRate,
@@ -83,7 +86,8 @@ class TeamBanner {
                 <img
                     class="logo"
                     src="${this.team2.logoPath}"
-                    alt="${this.team2.name} Logo" />
+                    alt="${this.team2.name} Logo"
+                    draggable="false">
             </div>
         `;
         return bannerElem;
