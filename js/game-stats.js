@@ -120,12 +120,13 @@ function main() {
     const players = getUniqueRandomElements(DEFAULT_PLAYERS, 10);
 
     players.forEach((player, i) => {
-        const playerCard = new PlayerCard(player).create();
+        const playerCard = new PlayerCard(player);
+        const playerCardElem = playerCard.create();
 
         if (i < players.length / 2) {
-            LEFT_SIDEBAR.appendChild(playerCard);
+            LEFT_SIDEBAR.appendChild(playerCardElem);
         } else {
-            RIGHT_SIDEBAR.appendChild(playerCard);
+            RIGHT_SIDEBAR.appendChild(playerCardElem);
         }
     });
 
