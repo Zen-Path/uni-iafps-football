@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Test</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body,
+            html {
+                height: 100%;
+            }
+
+            .container {
+                display: grid;
+                grid-template-columns: 1fr 3fr 1fr;
+                /* Two sidebars and a main content area */
+                grid-template-rows: auto 1fr;
+                /* Top banner and the rest of the content */
+                height: 100vh;
+                background-color: red;
+            }
+
+            .sidebar-left,
+            .sidebar-right {
+                background-color: #ddd;
+                /* For visibility */
+                height: calc(100vh - 20px);
+                /* Subtracting 10px for top and bottom */
+                margin: 10px 0;
+                /* 10px top and bottom padding */
+            }
+
+            .main-content {
+                grid-column: 2;
+                /* Make the main content span the center column */
+                padding: 10px;
+            }
+
+            .banner {
+                background-color: #ccc;
+                /* For visibility */
+                height: 100px;
+                /* Set the height of the banner */
+            }
+
+            .image {
+                background-color: #bbb;
+                /* For visibility */
+                height: 300px;
+                /* Set the height of the image */
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="sidebar-left"></div>
+            <div class="main-content">
+                <div class="banner"></div>
+                <div class="image"></div>
+            </div>
+            <div class="sidebar-right"></div>
+        </div>
+    </body>
+</html>
