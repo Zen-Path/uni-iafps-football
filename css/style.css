@@ -1,7 +1,46 @@
+:root {
+    /** Base colors */
+    --clr-dark-a0: #000000;
+    --clr-light-a0: #ffffff;
+
+    /** Dark theme primary colors */
+    --clr-primary-a0: #a0153e;
+    --clr-primary-a10: #d04646;
+    --clr-primary-a20: #ef6150;
+    --clr-primary-a30: #f67a67;
+    --clr-primary-a40: #fb917f;
+    --clr-primary-a50: #fea897;
+
+    /** Dark theme surface colors */
+    --clr-surface-a0: #8d1236;
+    --clr-surface-a10: #a0153e;
+    --clr-surface-a20: #743f39;
+    --clr-surface-a30: #885852;
+    --clr-surface-a40: #9c726d;
+    --clr-surface-a50: #b08d88;
+
+    /** Dark theme primary colors */
+    --clr-primary-b0: #1c71d8;
+    --clr-primary-b10: #454bd4;
+    --clr-primary-b20: #4a7fdd;
+    --clr-primary-b30: #809de6;
+    --clr-primary-b40: #97adeb;
+    --clr-primary-b50: #acbdef;
+
+    /** Dark theme surface colors */
+    --clr-surface-b0: #4146c4;
+    --clr-surface-b10: #24276e;
+    --clr-surface-b20: #424c66;
+    --clr-surface-b30: #5b637a;
+    --clr-surface-b40: #747b8f;
+    --clr-surface-b50: #8f94a5;
+}
+
 * {
     margin: 0;
     padding: 0;
     border: none;
+    box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
 
@@ -17,7 +56,7 @@ img {
     user-select: none;
 }
 
-.scrollable-element {
+.hidden-scrollable {
     overflow: auto;
     scrollbar-width: none;
     /* For Firefox */
@@ -25,7 +64,7 @@ img {
     /* For Internet Explorer and Edge */
 }
 
-.scrollable-element::-webkit-scrollbar {
+.hidden-scrollable::-webkit-scrollbar {
     display: none;
     /* For Chrome, Safari, and newer Edge */
 }
