@@ -1,5 +1,5 @@
-import { DEFAULT_PLAYERS, Player, PlayerStats } from "./player.js";
 import { getUniqueRandomElements } from "./utils.js";
+import { DEFAULT_PLAYERS } from "./player.js";
 import { DEFAULT_TEAMS } from "./team.js";
 
 const SIDEBAR_LEFT = document.body.querySelector("#sidebar-left");
