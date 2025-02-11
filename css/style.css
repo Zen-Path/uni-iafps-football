@@ -1,39 +1,27 @@
 :root {
-    /** Base colors */
+    /* Base colors */
     --clr-dark-a0: #000000;
     --clr-light-a0: #ffffff;
 
-    /** Dark theme primary colors */
-    --clr-primary-a0: #a0153e;
-    --clr-primary-a10: #d04646;
-    --clr-primary-a20: #ef6150;
-    --clr-primary-a30: #f67a67;
-    --clr-primary-a40: #fb917f;
-    --clr-primary-a50: #fea897;
+    /* Color A */
+    --clr-primary-a0: #5c0b0b;
 
-    /** Dark theme surface colors */
-    --clr-surface-a0: #8d1236;
+    --clr-surface-a0: #8d1e3b;
     --clr-surface-a10: #a0153e;
-    --clr-surface-a20: #743f39;
-    --clr-surface-a30: #885852;
-    --clr-surface-a40: #9c726d;
-    --clr-surface-a50: #b08d88;
+    --clr-surface-a20: #d04646;
+    --clr-surface-a30: #c05f5f;
+    --clr-primary-a40: #fb917f;
+    --clr-surface-a50: #f5b8ac;
 
-    /** Dark theme primary colors */
-    --clr-primary-b0: #1c71d8;
-    --clr-primary-b10: #454bd4;
-    --clr-primary-b20: #4a7fdd;
-    --clr-primary-b30: #809de6;
-    --clr-primary-b40: #97adeb;
-    --clr-primary-b50: #acbdef;
+    /* Color B */
+    --clr-primary-b0: #0b376d;
 
-    /** Dark theme surface colors */
-    --clr-surface-b0: #4146c4;
+    --clr-surface-b0: #3f43af;
     --clr-surface-b10: #24276e;
-    --clr-surface-b20: #424c66;
-    --clr-surface-b30: #5b637a;
-    --clr-surface-b40: #747b8f;
-    --clr-surface-b50: #8f94a5;
+    --clr-surface-b20: #4f56da;
+    --clr-surface-b30: #697fc2;
+    --clr-primary-b40: #97adeb;
+    --clr-surface-b50: #b8c1e1;
 }
 
 * {
@@ -58,18 +46,18 @@ img {
 
 .hidden-scrollable {
     overflow: auto;
-    scrollbar-width: none;
     /* For Firefox */
-    -ms-overflow-style: none;
+    scrollbar-width: none;
     /* For Internet Explorer and Edge */
+    -ms-overflow-style: none;
 }
 
 .hidden-scrollable::-webkit-scrollbar {
-    display: none;
     /* For Chrome, Safari, and newer Edge */
+    display: none;
 }
 
-/* Resources */
+/* Fonts */
 
 @font-face {
     font-family: "Carter One";
