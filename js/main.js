@@ -113,7 +113,7 @@ class TeamBanner {
     }
 
     _composeSuccessRate(team1SuccessRate, team2SuccessRate) {
-        return `${this._formatSuccessRate(team1SuccessRate)}:${this._formatSuccessRate(
+        return `${this._formatSuccessRate(team1SuccessRate)}-${this._formatSuccessRate(
             team2SuccessRate,
         )}`;
     }
