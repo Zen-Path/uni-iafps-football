@@ -17,11 +17,13 @@ class PlayerCard {
         cardElem.classList.add("full-card");
         console.log(this.player.stat);
         cardElem.innerHTML = `
-            <img
+            <div class="profile-picture-container">
+                <img
                 class="profile-picture"
                 src="${this.player.profilePicturePath}"
                 alt="${this.player.fullName}"
-                draggable="false" >
+                draggable="false">
+            </div>
 
             <p class="first-name">${this.player.firstName}</p>
             <p class="last-name">${this.player.lastName}</p>
