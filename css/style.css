@@ -5,6 +5,7 @@
 
     /* Color A */
     --clr-primary-a0: #5c0b0b;
+    --clr-primary-a10: #922727;
 
     --clr-surface-a0: #8d1e3b;
     --clr-surface-a10: #a0153e;
@@ -15,6 +16,7 @@
 
     /* Color B */
     --clr-primary-b0: #0b376d;
+    --clr-primary-b10: #144582;
 
     --clr-surface-b0: #3f43af;
     --clr-surface-b10: #24276e;

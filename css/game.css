@@ -268,7 +268,7 @@
     width: 100%;
     user-select: none;
 
-    line-height: 1.1;
+    line-height: 1.2;
 }
 
 .stats-descriptions {
@@ -278,11 +278,11 @@
 }
 
 #sidebar-left .stats-descriptions {
-    border-right: 3px solid var(--clr-primary-a20);
+    border-right: 3px solid var(--clr-primary-a10);
 }
 
 #sidebar-right .stats-descriptions {
-    border-right: 3px solid var(--clr-primary-b20);
+    border-right: 3px solid var(--clr-primary-b10);
 }
 
 .stats-values .value {
