@@ -1,0 +1,327 @@
+:root {
+    --content-padding-vertical: 15px;
+    --content-padding-horizontal: 20px;
+
+    /* BANNER */
+    --badge-border-radius: 20px;
+    --badge-padding: 15px;
+
+    --ribbon-width: 90px;
+    --ribbon-after-height: 35px;
+
+    /* CARDS */
+    --full-card-outline-color: white;
+    --full-card-border-radius: 20px;
+
+    --full-profile-picture-dimension: 65px;
+    --full-profile-picture-padding-horizontal: 10px;
+    --full-profile-picture-padding-vertical: 10px;
+}
+
+#content {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+
+    height: 100vh;
+    gap: 20px;
+    padding: var(--content-padding-vertical) var(--content-padding-horizontal);
+
+    background: linear-gradient(135deg, var(--clr-surface-b0), var(--clr-surface-a0));
+}
+
+/* BANNER */
+
+.banner {
+    display: flex;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    padding: 0px 15px;
+}
+
+.badge.left {
+    background: linear-gradient(
+        90deg,
+        var(--clr-surface-a10) 0%,
+        var(--clr-surface-a20) 100%
+    );
+    border-radius: var(--badge-border-radius) 0px 0px var(--badge-border-radius);
+}
+
+.badge.right {
+    background: linear-gradient(
+        90deg,
+        var(--clr-surface-b20) 0%,
+        var(--clr-surface-b10) 100%
+    );
+    border-radius: 0px var(--badge-border-radius) var(--badge-border-radius) 0px;
+}
+
+.badge p {
+    width: 220px;
+
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--clr-light-a0);
+}
+
+.badge .logo {
+    max-width: 40px;
+    max-width: 40px;
+}
+
+.ribbon {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #ffd700;
+    width: var(--ribbon-width);
+
+    margin: 0px 0px -10px 0px;
+    box-shadow: 0px 0px 8px #ffd700;
+}
+
+.ribbon .icon {
+    width: 50px;
+    height: 50px;
+    margin: 5px 0px 5px 0px;
+}
+
+.ribbon p {
+    color: black;
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    user-select: none;
+}
+
+.ribbon:after {
+    position: absolute;
+    bottom: calc(-1 * var(--ribbon-after-height));
+    left: 50%;
+    transform: translateX(-50%);
+
+    content: "";
+
+    border-left: calc(var(--ribbon-width) / 2 + 1px) solid transparent;
+    border-right: calc(var(--ribbon-width) / 2 + 1px) solid transparent;
+    border-top: calc(1px + var(--ribbon-after-height)) solid #ffd700;
+
+    filter: drop-shadow(1px 1px 5px #ffd700);
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sketch {
+    position: relative;
+    margin-top: 100px;
+}
+
+/* TODO, will remove when implementing main game */
+#sketch > img {
+    height: calc(100vh - 300px);
+    border-radius: 10px;
+}
+
+/* SIDEBAR */
+
+.sidebar-container {
+    height: calc(100vh - 2 * var(--content-padding-vertical));
+    width: 230px;
+    padding: 15px 12px;
+    border-radius: 20px;
+}
+
+.sidebar-container.left {
+    background-color: var(--clr-surface-a10);
+    box-shadow: 0px 0px 8px var(--clr-surface-a10);
+}
+
+.sidebar-container.right {
+    background-color: var(--clr-surface-b10);
+    box-shadow: 0px 0px 8px var(--clr-surface-b10);
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    gap: 8px;
+    border-radius: var(--full-card-border-radius);
+
+    overflow-y: auto;
+}
+
+/* FULL CARDS */
+
+.full-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    margin: 3px 3px;
+    padding: 15px 15px;
+    border-radius: var(--full-card-border-radius);
+}
+
+.full-card:hover {
+    cursor: pointer;
+    outline: 3px solid var(--full-card-outline-color);
+}
+
+#sidebar-left .full-card {
+    background: linear-gradient(
+        to bottom,
+        var(--clr-surface-a20),
+        var(--clr-surface-a50)
+    );
+}
+
+#sidebar-right .full-card {
+    background: linear-gradient(
+        to bottom,
+        var(--clr-surface-b20),
+        var(--clr-surface-b50)
+    );
+}
+
+/* PROFILE PICTURE */
+
+.profile-picture-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    width: calc(
+        var(--full-profile-picture-dimension) +
+            var(--full-profile-picture-padding-horizontal)
+    );
+    height: calc(
+        var(--full-profile-picture-dimension) +
+            var(--full-profile-picture-padding-vertical)
+    );
+
+    border-radius: 50%;
+    border: 3px solid var(--full-card-outline-color);
+}
+
+.profile-picture {
+    width: var(--full-profile-picture-dimension);
+    height: var(--full-profile-picture-dimension);
+    border-radius: 50%;
+}
+
+#sidebar-left .profile-picture-container {
+    background-color: var(--clr-surface-a30);
+}
+
+#sidebar-right .profile-picture-container {
+    background-color: var(--clr-surface-b30);
+}
+
+/* PLAYER NAME */
+
+.full-card .first-name {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.full-card .last-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+#sidebar-left .full-card .last-name {
+    color: var(--clr-primary-a0);
+}
+
+#sidebar-right .full-card .last-name {
+    color: var(--clr-primary-b0);
+}
+
+/* PLAYER STATS */
+
+.stats-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 100%;
+    user-select: none;
+
+    line-height: 1.1;
+}
+
+.stats-descriptions {
+    width: 80%;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+#sidebar-left .stats-descriptions {
+    border-right: 3px solid var(--clr-primary-a20);
+}
+
+#sidebar-right .stats-descriptions {
+    border-right: 3px solid var(--clr-primary-b20);
+}
+
+.stats-values .value {
+    font-family: "Roboto Mono", sans-serif;
+}
+
+/* MINI CARDS */
+
+.mini-card {
+    position: absolute;
+    color: red;
+}
+
+.mini-card img {
+    min-height: 40px;
+    min-width: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 4px solid var(--full-card-outline-color);
+    background-color: var(--primary-red);
+}
+
+.card-1 {
+    top: 22%;
+    left: 25%;
+}
+
+.card-2 {
+    top: 34%;
+    left: 37%;
+}
+
+/* BUTTON AREA */
+
+.btn-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    margin-top: 50px;
+}
