@@ -40,7 +40,7 @@ h1 {
 }
 
 .primary-btn:hover {
-    transform: scale(1.2);
+    outline: 2px solid white;
 }
 
 .primary-btn:active {
