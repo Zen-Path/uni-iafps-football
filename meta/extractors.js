@@ -37,38 +37,30 @@ copy(teamsFmt);
 var players = [...document.body.querySelector(".ais-hits").children]
     .map((playerDiv) => {
         const name = playerDiv.querySelector(".name a").textContent;
+        const nameParts = name.split(" ");
+
+        // Avoid complicated names.
         if (name.split(" ").length !== 2) {
             return null;
         }
+
+        const firstName = nameParts[0];
+        const lastName = nameParts[1];
+
         return {
-            photo: playerDiv.querySelector(".player img").src,
-            name: name,
+            firstName,
+            lastName,
+            imageUrl: playerDiv.querySelector(".player img").src,
+            imageName: `${[firstName, lastName].join("-").replaceAll("'", "-").trim().toLowerCase()}.png`,
         };
     })
     .filter(Boolean);
 
-var playerImages = players
-    .map(
-        (player) =>
-            `${player.photo}\n\tout=${player.name
-                .trim()
-                .toLowerCase()
-                .replaceAll(" ", "-")}.png`,
-    )
-    .join("\n");
+var playersFmt = JSON.stringify(players, null, 4);
 
-var playerNames = players
-    .map(
-        (player) =>
-            `new Player("${player.name.split(" ")[0]}", "${player.name
-                .split(" ")
-                .slice(1)}", "../assets/images/players/${player.name
-                .trim()
-                .toLowerCase()
-                .replaceAll(" ", "-")}.png"),`,
-    )
-    .join("\n");
+console.log(
+    players.map((player) => `${player.imageUrl}\n\tout=${player.imageName}`).join("\n"),
+);
 
-console.log(JSON.stringify(players, null, 4));
-console.log(playerImages);
-console.log(playerNames);
+console.log(playersFmt);
+copy(playersFmt);
