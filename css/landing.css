@@ -32,7 +32,7 @@ h1 {
             var(--text-outline-color),
         var(--text-outline-size) var(--text-outline-size) 0 var(--text-outline-color);
 
-    margin: 25vh 10px 0px;
+    margin: 30vh 10px 0px;
 
     user-select: none;
 }
