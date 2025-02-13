@@ -123,7 +123,7 @@ export class TeamBanner {
         const teamBChance = 100 - teamAChance;
 
         return [teamAChance, teamBChance]
-            .map((chance) => `${chance.toFixed(0)}`)
+            .map((chance) => `${String(chance.toFixed(0)).padStart(2, 0)}`)
             .join(":");
     }
 }
