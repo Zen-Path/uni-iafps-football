@@ -22,6 +22,19 @@ export class Team {
 
         this.positions = [];
         this.winningChance = 50.0;
+
+        this.sidebarId = `sidebar-${this.side}`;
+        this.sidebarElem = null;
+    }
+
+    createSidebar() {
+        const sidebarElem = document.createElement("div");
+        sidebarElem.classList.add("sidebar", "hidden-scrollable");
+        sidebarElem.id = `sidebar-${this.side}`;
+
+        sidebarElem.append(...this.getFullCards());
+        this.sidebarElem = sidebarElem;
+        return sidebarElem;
     }
 
     getFullCards() {
@@ -41,6 +54,7 @@ export class Team {
 }
 export class TeamBanner {
     static TEAMS_WINNING_CHANCE_ID = "teams-winning-chance";
+    static BANNER_CONTAINER_ID = "banner-container";
 
     constructor(teams) {
         this.teams = teams;
@@ -87,7 +101,7 @@ export class TeamBanner {
         iconElem.draggable = false;
 
         const chanceElem = document.createElement("p");
-        chanceElem.setAttribute(TeamBanner.TEAMS_WINNING_CHANCE_ID, "");
+        chanceElem.id = TeamBanner.TEAMS_WINNING_CHANCE_ID;
         chanceElem.textContent = this.#composeSuccessRate();
 
         ribbonElem.append(iconElem, chanceElem);
@@ -96,7 +110,7 @@ export class TeamBanner {
 
     updateSuccessRate() {
         const successRateElem = document.querySelector(
-            TeamBanner.TEAMS_WINNING_CHANCE_ID,
+            `#${TeamBanner.TEAMS_WINNING_CHANCE_ID}`,
         );
         if (successRateElem) {
             successRateElem.textContent = this.#composeSuccessRate();
@@ -104,7 +118,13 @@ export class TeamBanner {
     }
 
     #composeSuccessRate() {
-        return this.teams.map((team) => team.winningChance).join(":");
+        // TODO: Replace with actual logic
+        const teamAChance = this.teams[0].calcWinningChance();
+        const teamBChance = 100 - teamAChance;
+
+        return [teamAChance, teamBChance]
+            .map((chance) => `${chance.toFixed(0)}`)
+            .join(":");
     }
 }
 
