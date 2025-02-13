@@ -1,77 +1,115 @@
-class Team {
-    COLORS = {
-        RED: "#d9042b",
-        BLUE: "#03658c",
+import { TEAMS_DATA } from "../data/teams.js";
+
+export class Team {
+    static SIDE = {
+        LEFT: "left",
+        RIGHT: "right",
     };
 
-    LOGO_DIR = "../assets/images/teams/";
+    static PLAYER_ORDER = {
+        MANUAL: 0,
+        BEST: 1,
+        WORST: 2,
+        RANDOM: 3,
+    };
 
-    // Note: provide either logo name OR path.
-    constructor(name, logoName = null, logoPath = null, side = null, color = null) {
+    constructor(name, logo, side = null, players = null) {
         this.name = name;
-
-        this.logoName = logoName;
-        this.logoPath = logoPath ? logoPath : this.LOGO_DIR + logoName;
+        this.logo = logo;
 
         this.side = side;
-        this.color = color ? color : this.COLORS[this.side % 2];
+        this.players = players;
 
-        this.successRate = 50.0;
+        this.positions = [];
+        this.winningChance = 50.0;
     }
 
-    calculateSuccessRate() {
-        const successRate = Math.random() * 100;
-        this.successRate = successRate;
-        return successRate;
+    getFullCards() {
+        return this.players.map((player) => player.createFullCard());
+    }
+
+    // TODO: improve this logic
+    getMiniCards() {
+        return this.positions.map((player) => player.createMiniCard());
+    }
+
+    calcWinningChance() {
+        const winningChance = Math.random() * 100;
+        this.winningChance = winningChance;
+        return winningChance;
+    }
+}
+export class TeamBanner {
+    static TEAMS_WINNING_CHANCE_ID = "teams-winning-chance";
+
+    constructor(teams) {
+        this.teams = teams;
+    }
+
+    create() {
+        const bannerElem = document.createElement("div");
+        bannerElem.classList.add("banner");
+
+        bannerElem.append(
+            this.#createTeamBadge(this.teams[0]),
+            this.#createRibbon(),
+            this.#createTeamBadge(this.teams[1]),
+        );
+
+        return bannerElem;
+    }
+
+    #createTeamBadge(team) {
+        const badgeElem = document.createElement("div");
+        badgeElem.classList.add("badge", team.side);
+
+        const logoElem = document.createElement("img");
+        logoElem.classList.add("logo");
+        logoElem.alt = `${team.name} Logo`;
+        logoElem.draggable = false;
+        logoElem.src = team.logo || "";
+
+        const nameElem = document.createElement("p");
+        nameElem.textContent = team.name;
+
+        badgeElem.append(logoElem, nameElem);
+        return badgeElem;
+    }
+
+    #createRibbon() {
+        const ribbonElem = document.createElement("div");
+        ribbonElem.classList.add("ribbon");
+
+        const iconElem = document.createElement("img");
+        iconElem.classList.add("icon");
+        iconElem.src = "../assets/icons/icon_gold-ball.png";
+        iconElem.alt = "Gold ball";
+        iconElem.draggable = false;
+
+        const chanceElem = document.createElement("p");
+        chanceElem.setAttribute(TeamBanner.TEAMS_WINNING_CHANCE_ID, "");
+        chanceElem.textContent = this.#composeSuccessRate();
+
+        ribbonElem.append(iconElem, chanceElem);
+        return ribbonElem;
+    }
+
+    updateSuccessRate() {
+        const successRateElem = document.querySelector(
+            TeamBanner.TEAMS_WINNING_CHANCE_ID,
+        );
+        if (successRateElem) {
+            successRateElem.textContent = this.#composeSuccessRate();
+        }
+    }
+
+    #composeSuccessRate() {
+        return this.teams.map((team) => team.winningChance).join(":");
     }
 }
 
-// Source: https://footballdatabase.com/ranking/world/1
-export const DEFAULT_TEAMS = [
-    new Team("Liverpool FC", "liverpool-fc.png"),
-    new Team("Inter Milan", "inter-milan.png"),
-    new Team("Arsenal", "arsenal.png"),
-    new Team("Real Madrid", "real-madrid.png"),
-    new Team("Bayer Leverkusen", "bayer-leverkusen.png"),
-    new Team("Paris Saint-Germain", "paris-saint-germain.png"),
-    new Team("Barcelona", "barcelona.png"),
-    new Team("Bayern München", "bayern-münchen.png"),
-    new Team("Atlético Madrid", "atlético-madrid.png"),
-    new Team("Atalanta", "atalanta.png"),
-    new Team("Manchester City", "manchester-city.png"),
-    new Team("SSC Napoli", "ssc-napoli.png"),
-    new Team("PSV Eindhoven", "psv-eindhoven.png"),
-    new Team("Sporting", "sporting.png"),
-    new Team("Juventus", "juventus.png"),
-    new Team("Athletic Bilbao", "athletic-bilbao.png"),
-    new Team("Chelsea FC", "chelsea-fc.png"),
-    new Team("Benfica", "benfica.png"),
-    new Team("Lille", "lille.png"),
-    new Team("AC Milan", "ac-milan.png"),
-    new Team("Newcastle United", "newcastle-united.png"),
-    new Team("Bologna", "bologna.png"),
-    new Team("Borussia Dortmund", "borussia-dortmund.png"),
-    new Team("Feyenoord", "feyenoord.png"),
-    new Team("Lazio", "lazio.png"),
-    new Team("Villarreal", "villarreal.png"),
-    new Team("FC Porto", "fc-porto.png"),
-    new Team("Galatasaray", "galatasaray.png"),
-    new Team("Eintracht Frankfurt", "eintracht-frankfurt.png"),
-    new Team("Botafogo FR", "botafogo-fr.png"),
-    new Team("Al Hilal", "al-hilal.png"),
-    new Team("Aston Villa", "aston-villa.png"),
-    new Team("Fiorentina", "fiorentina.png"),
-    new Team("AS Monaco", "as-monaco.png"),
-    new Team("Palmeiras", "palmeiras.png"),
-    new Team("Fenerbahçe", "fenerbahçe.png"),
-    new Team("AS Roma", "as-roma.png"),
-    new Team("VfB Stuttgart", "vfb-stuttgart.png"),
-    new Team("Celtic", "celtic.png"),
-    new Team("Slavia Prague", "slavia-prague.png"),
-    new Team("Corinthians", "corinthians.png"),
-    new Team("Ajax Amsterdam", "ajax-amsterdam.png"),
-    new Team("Fulham", "fulham.png"),
-    new Team("Marseille", "marseille.png"),
-    new Team("Mainz 05", "mainz-05.png"),
-    new Team("FK Red Star Belgrade", "fk-red-star-belgrade.png"),
-];
+const TEAM_LOGOS_DIR = "../assets/images/teams";
+
+export const DEFAULT_TEAMS = TEAMS_DATA.map((team) => {
+    return new Team(team.name, `${TEAM_LOGOS_DIR}/${team.fileName}`);
+});
