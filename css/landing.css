@@ -23,7 +23,14 @@ h1 {
     --text-outline-color: var(--clr-primary-a30);
     --text-outline-size: 2px;
     color: var(--clr-primary-a20);
-    text-shadow: calc(-1 * var(--text-outline-size)) calc(-1 * var(--text-outline-size)) 0 var(--text-outline-color), var(--text-outline-size) calc(-1 * var(--text-outline-size)) 0 var(--text-outline-color), calc(-1 * var(--text-outline-size)) var(--text-outline-size) 0 var(--text-outline-color), var(--text-outline-size) var(--text-outline-size) 0 var(--text-outline-color);
+    text-shadow:
+        calc(-1 * var(--text-outline-size)) calc(-1 * var(--text-outline-size)) 0
+            var(--text-outline-color),
+        var(--text-outline-size) calc(-1 * var(--text-outline-size)) 0
+            var(--text-outline-color),
+        calc(-1 * var(--text-outline-size)) var(--text-outline-size) 0
+            var(--text-outline-color),
+        var(--text-outline-size) var(--text-outline-size) 0 var(--text-outline-color);
 
     margin: 25vh 10px 0px;
 
