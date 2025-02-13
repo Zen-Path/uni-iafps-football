@@ -65,15 +65,15 @@ export class TeamBanner {
         bannerElem.classList.add("banner");
 
         bannerElem.append(
-            this.#createTeamBadge(this.teams[0]),
+            this.#createTeamBadge(this.teams[0], 0),
             this.#createRibbon(),
-            this.#createTeamBadge(this.teams[1]),
+            this.#createTeamBadge(this.teams[1], 1),
         );
 
         return bannerElem;
     }
 
-    #createTeamBadge(team) {
+    #createTeamBadge(team, side) {
         const badgeElem = document.createElement("div");
         badgeElem.classList.add("badge", team.side);
 
@@ -86,7 +86,12 @@ export class TeamBanner {
         const nameElem = document.createElement("p");
         nameElem.textContent = team.name;
 
-        badgeElem.append(logoElem, nameElem);
+        if (side) {
+            badgeElem.append(nameElem, logoElem);
+        } else {
+            badgeElem.append(logoElem, nameElem);
+        }
+
         return badgeElem;
     }
 
