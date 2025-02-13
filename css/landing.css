@@ -4,7 +4,6 @@
     align-items: center;
 
     width: 100vw;
-    min-width: 600px;
     height: 100vh;
 
     background-image: url(../assets/images/landing_background.jpg);
@@ -65,4 +64,10 @@ h1 {
     user-select: none;
     color: white;
     font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 800px) {
+    h1 {
+        font-size: max(30px, 15vw);
+    }
 }
