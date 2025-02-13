@@ -2,36 +2,24 @@
 
 // Source: https://footballdatabase.com/ranking/world/1
 
-var teams = [...document.body.querySelectorAll(".club.text-left")].map((teamDiv) => {
+var teams = [...document.body.querySelectorAll(".club.text-left")].map((teamElem) => {
+    const name = teamElem.querySelector(".limittext").textContent;
+
     return {
-        name: teamDiv.querySelector(".limittext").textContent,
-        logo: `https://footballdatabase.com${
-            teamDiv
+        name: name,
+        logoUrl: `https://footballdatabase.com${
+            teamElem
                 .querySelector(".logo-md")
                 .style.backgroundImage.match(/url\("(.*)"\)/)[1]
         }`,
+        fileName: `${name.toLowerCase().replaceAll(" ", "-")}.png`,
     };
 });
 
-console.log(
-    teams
-        .map((team) => {
-            return `new Team("${team.name}", "${team.name
-                .toLowerCase()
-                .replaceAll(" ", "-")}.png")`;
-        })
-        .join(",\n"),
-);
+var teamsFmt = JSON.stringify(teams, null, 4);
 
-console.log(
-    teams
-        .map((team) => {
-            return `${team.logo}\n\tout=${team.name
-                .toLowerCase()
-                .replaceAll(" ", "-")}.png`;
-        })
-        .join("\n"),
-);
+console.log(teamsFmt);
+copy(teamsFmt);
 
 // PLAYERS
 
