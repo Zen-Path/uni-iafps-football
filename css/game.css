@@ -22,7 +22,7 @@
     display: grid;
     grid-template-columns: auto 1fr auto;
 
-    height: 100vh;
+    overflow-x: auto;
     gap: 20px;
     padding: var(--content-padding-vertical) var(--content-padding-horizontal);
 
