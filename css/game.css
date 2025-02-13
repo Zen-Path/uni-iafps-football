@@ -142,7 +142,6 @@
 
 .sidebar-container {
     height: calc(100vh - 2 * var(--content-padding-vertical));
-    width: 230px;
     padding: 15px 12px;
     border-radius: 20px;
 }
@@ -176,6 +175,7 @@
     align-items: center;
     text-align: center;
 
+    width: 190px;
     margin: 3px 3px;
     padding: 15px 15px;
     border-radius: var(--full-card-border-radius);
