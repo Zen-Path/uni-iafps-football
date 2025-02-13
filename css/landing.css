@@ -14,12 +14,20 @@
 h1 {
     font-family: "Carter One", sans-serif;
     font-size: min(120px, 15vh);
+
     text-align: center;
     text-transform: uppercase;
+    line-height: 1.1;
+    letter-spacing: 2%;
 
-    margin: 30vh 0px 0px 0px;
+    --text-outline-color: var(--clr-primary-a30);
+    --text-outline-size: 2px;
+    color: var(--clr-primary-a20);
+    text-shadow: calc(-1 * var(--text-outline-size)) calc(-1 * var(--text-outline-size)) 0 var(--text-outline-color), var(--text-outline-size) calc(-1 * var(--text-outline-size)) 0 var(--text-outline-color), calc(-1 * var(--text-outline-size)) var(--text-outline-size) 0 var(--text-outline-color), var(--text-outline-size) var(--text-outline-size) 0 var(--text-outline-color);
+
+    margin: 25vh 10px 0px;
+
     user-select: none;
-    color: white;
 }
 
 .primary-btn {
