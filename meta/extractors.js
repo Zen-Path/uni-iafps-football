@@ -2,21 +2,31 @@
 
 // Source: https://footballdatabase.com/ranking/world/1
 
-var teams = [...document.body.querySelectorAll(".club.text-left")].map((teamElem) => {
-    const name = teamElem.querySelector(".limittext").textContent;
+var teams = [...document.body.querySelectorAll(".club.text-left")]
+    .map((teamElem) => {
+        const name = teamElem.querySelector(".limittext").textContent;
 
-    return {
-        name: name,
-        logoUrl: `https://footballdatabase.com${
-            teamElem
-                .querySelector(".logo-md")
-                .style.backgroundImage.match(/url\("(.*)"\)/)[1]
-        }`,
-        fileName: `${name.toLowerCase().replaceAll(" ", "-")}.png`,
-    };
-});
+        return {
+            name: name,
+            logoUrl: `https://footballdatabase.com${
+                teamElem
+                    .querySelector(".logo-md")
+                    .style.backgroundImage.match(/url\("(.*)"\)/)[1]
+            }`,
+            fileName: `${name.toLowerCase().replaceAll(" ", "-")}.png`,
+        };
+    })
+    .slice(0, 15);
 
 var teamsFmt = JSON.stringify(teams, null, 4);
+
+console.log(
+    teams
+        .map((team) => {
+            return `${team.logoUrl}\n\tout=${team.fileName}`;
+        })
+        .join("\n"),
+);
 
 console.log(teamsFmt);
 copy(teamsFmt);
