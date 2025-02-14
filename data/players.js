@@ -120,12 +120,6 @@ export const PLAYERS_DATA = [
         imageName: "bryan-mbeumo.png",
     },
     {
-        firstName: "Trent",
-        lastName: "Alexander-Arnold",
-        imageUrl: "https://www.sportsbase.io/images/people/63028.png",
-        imageName: "trent-alexander-arnold.png",
-    },
-    {
         firstName: "Íñigo",
         lastName: "Martínez",
         imageUrl: "https://www.sportsbase.io/images/people/16888.png",
@@ -311,12 +305,6 @@ export const PLAYERS_DATA = [
         lastName: "Kluivert",
         imageUrl: "https://www.sportsbase.io/images/people/114739.png",
         imageName: "justin-kluivert.png",
-    },
-    {
-        firstName: "Vanja",
-        lastName: "Milinković-Savić",
-        imageUrl: "https://www.sportsbase.io/images/people/33874.png",
-        imageName: "vanja-milinković-savić.png",
     },
     {
         firstName: "Rayan",
@@ -620,12 +608,6 @@ export const PLAYERS_DATA = [
         imageName: "ladislav-krejčí.png",
     },
     {
-        firstName: "Morgan",
-        lastName: "Gibbs-White",
-        imageUrl: "https://www.sportsbase.io/images/people/151926.png",
-        imageName: "morgan-gibbs-white.png",
-    },
-    {
         firstName: "Abdul",
         lastName: "Mumin",
         imageUrl: "https://www.sportsbase.io/images/people/135583.png",
@@ -889,12 +871,6 @@ export const PLAYERS_DATA = [
         lastName: "Raíllo",
         imageUrl: "https://www.sportsbase.io/images/people/68301.png",
         imageName: "antonio-raíllo.png",
-    },
-    {
-        firstName: "Sávio",
-        lastName: "",
-        imageUrl: "https://www.sportsbase.io/images/people/408308.png",
-        imageName: "sávio-.png",
     },
     {
         firstName: "Marvin",
@@ -1292,12 +1268,6 @@ export const PLAYERS_DATA = [
         lastName: "Ouattara",
         imageUrl: "https://www.sportsbase.io/images/people/338884.png",
         imageName: "dango-ouattara.png",
-    },
-    {
-        firstName: "Evan",
-        lastName: "N'Dicka",
-        imageUrl: "https://www.sportsbase.io/images/people/134710.png",
-        imageName: "evan-n-dicka.png",
     },
     {
         firstName: "Jhon",
