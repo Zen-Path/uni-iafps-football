@@ -16,6 +16,10 @@
     --full-profile-picture-dimension: 65px;
     --full-profile-picture-padding-horizontal: 10px;
     --full-profile-picture-padding-vertical: 10px;
+
+    /* BTN AREA */
+    --btn-area-margin-top: 40px;
+    --btn-area-height: 50px;
 }
 
 #content {
@@ -370,8 +374,26 @@
 .btn-area {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
     width: 100%;
-    margin-top: 50px;
+    height: var(--btn-area-height);
+    margin-top: var(--btn-area-margin-top);
+    gap: 60px;
+    background-color: inherit;
+}
+
+.full-screen-btn,
+.arrow-btn {
+    background-color: inherit;
+}
+
+.full-screen-btn img {
+    width: 25px;
+    height: 25px;
+}
+
+.arrow-btn img {
+    width: 30px;
+    height: 30px;
 }
