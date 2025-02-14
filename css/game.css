@@ -11,6 +11,7 @@
 
     /* CARDS */
     --full-card-outline-color: white;
+    --full-card-outline-size: 3px;
     --full-card-border-radius: 20px;
 
     --full-profile-picture-dimension: 65px;
@@ -215,14 +216,14 @@
     text-align: center;
 
     width: 190px;
-    margin: 3px 3px;
+    margin: var(--full-card-outline-size);
     padding: 15px 15px;
     border-radius: var(--full-card-border-radius);
 }
 
 .full-card:hover {
     cursor: pointer;
-    outline: 3px solid var(--full-card-outline-color);
+    outline: var(--full-card-outline-size) solid var(--full-card-outline-color);
 }
 
 #sidebar-left .full-card {
