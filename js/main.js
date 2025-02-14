@@ -26,6 +26,14 @@ function toggleFullScreen() {
     fullScreenStatus = !fullScreenStatus;
 }
 
+function nextStep() {
+    console.log("Next step....")
+}
+
+function previousStep() {
+    console.log("Previous step....")
+}
+
 function generatePlayers(teams, countA, countB, teamBanner) {
     const players = getUniqueRandomElements(DEFAULT_PLAYERS, countA + countB);
     teams[0].players = players.slice(0, countA);
@@ -44,7 +52,6 @@ function generatePlayers(teams, countA, countB, teamBanner) {
     SIDEBAR_CONTAINER_RIGHT.appendChild(rightSidebarElem);
 
     players.forEach((player) => {
-        console.log(player.fullCardElem);
         player.fullCardElem.addEventListener("click", () => {
             teamBanner.updateSuccessRate();
         });
@@ -91,3 +98,5 @@ window.onload = () => {
 };
 
 window.toggleFullScreen = toggleFullScreen;
+window.nextStep = nextStep;
+window.previousStep = previousStep;
