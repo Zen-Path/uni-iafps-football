@@ -22,7 +22,7 @@
     --board-margin-bottom: 20px;
 
     /* BTN AREA */
-    --team-form-height: 80px;
+    --team-form-height: 85px;
 }
 
 #content {
@@ -408,7 +408,7 @@
     align-items: center;
     justify-content: center;
 
-    gap: 80px;
+    gap: 40px;
     background-color: inherit;
 }
 
@@ -433,11 +433,12 @@
 
 .btn-container {
     display: flex;
-    gap: 50px;
+    gap: 30px;
 }
 
 .full-screen-btn,
 .arrow-btn {
+    padding: 6px 15px;
     background-color: inherit;
     transition: filter 0.2s ease;
 }
