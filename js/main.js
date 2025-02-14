@@ -6,6 +6,31 @@ const BANNER_CONTAINER = document.getElementById(TeamBanner.BANNER_CONTAINER_ID)
 const SIDEBAR_CONTAINER_LEFT = document.body.querySelector(".sidebar-container.left");
 const SIDEBAR_CONTAINER_RIGHT = document.body.querySelector(".sidebar-container.right");
 
+let fullScreenStatus = false;
+
+function toggleFullScreen() {
+    const content = document.getElementById("content");
+    const board = document.getElementById("board");
+    [content, board].forEach((element) =>
+        fullScreenStatus
+            ? element.classList.remove("full-screen")
+            : element.classList.add("full-screen"),
+    );
+
+    const elements = [
+        BANNER_CONTAINER,
+        SIDEBAR_CONTAINER_LEFT,
+        SIDEBAR_CONTAINER_RIGHT,
+        document.getElementById("teamForm"),
+    ];
+
+    elements.forEach(
+        (element) => (element.style.display = fullScreenStatus ? "block" : "none"),
+    );
+
+    fullScreenStatus = !fullScreenStatus;
+}
+
 function generatePlayers(teams, countA, countB, teamBanner) {
     const players = getUniqueRandomElements(DEFAULT_PLAYERS, countA + countB);
     teams[0].players = players.slice(0, countA);
@@ -69,3 +94,5 @@ function main() {
 window.onload = () => {
     main();
 };
+
+window.toggleFullScreen = toggleFullScreen;
