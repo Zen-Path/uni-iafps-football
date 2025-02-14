@@ -393,21 +393,58 @@
 
 /* BUTTON AREA */
 
-.btn-area {
+#teamForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: var(--team-form-height);
+    margin-top: auto;
+    gap: 10px;
+}
+
+.action-area {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 100%;
-    height: var(--btn-area-height);
-    margin-top: var(--btn-area-margin-top);
-    gap: 60px;
+    gap: 80px;
     background-color: inherit;
+}
+
+.team-options-container {
+    display: flex;
+    gap: 15px;
+}
+
+.team-options-container select {
+    text-align: center;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+
+.team-options-container.left select {
+    background-color: var(--clr-surface-a50);
+}
+
+.team-options-container.right select {
+    background-color: var(--clr-surface-b50);
+}
+
+.btn-container {
+    display: flex;
+    gap: 50px;
 }
 
 .full-screen-btn,
 .arrow-btn {
     background-color: inherit;
+    transition: filter 0.2s ease;
+}
+
+.full-screen-btn:hover,
+.arrow-btn:hover {
+    filter: invert();
 }
 
 .full-screen-btn img {
@@ -418,4 +455,21 @@
 .arrow-btn img {
     width: 30px;
     height: 30px;
+}
+
+.apply-btn {
+    padding: 8px 10px;
+    width: 100px;
+    border-radius: 10px;
+
+    font-size: 14px;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+}
+
+.apply-btn:hover {
+    outline: 2px solid white;
 }

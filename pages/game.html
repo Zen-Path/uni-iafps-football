@@ -21,81 +21,67 @@
                         alt="" />
                 </div>
 
-                <div class="btn-area">
-                    <button class="arrow-btn" onclick="previousStep()">
-                        <img
-                            src="../assets/icons/icon_arrow-left.svg"
-                            alt="Left arrow icon"
-                            title="Previous step" />
-                    </button>
-                    <button class="full-screen-btn" onclick="toggleFullScreen()">
-                        <img
-                            src="../assets/icons/icon_full-screen.svg"
-                            alt="Full screen icon"
-                            title="Toggle full screen" />
-                    </button>
-                    <button class="arrow-btn" onclick="nextStep()">
-                        <img
-                            src="../assets/icons/icon_arrow-right.svg"
-                            alt="Right arrow icon"
-                            title="Next step" />
-                    </button>
-                </div>
+                <form id="teamForm">
+                    <div class="action-area">
+                        <div class="team-options-container left">
+                            <select name="teamA_player_count">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="75">75</option>
+                                <option value="100">100</option>
+                            </select>
+                            <select name="teamA_order">
+                                <option value="manual">Manual</option>
+                                <option value="best">Best</option>
+                                <option value="worst">Worst</option>
+                                <option value="random">Random</option>
+                            </select>
+                        </div>
 
-                <form id="teamForm" style="margin-top: 30px">
-                    <table border="1">
-                        <tr>
-                            <th>Property</th>
-                            <th>Team A</th>
-                            <th>Team B</th>
-                        </tr>
-                        <tr>
-                            <td>Player Count</td>
-                            <td>
-                                <select name="teamA_player_count">
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option value="75">75</option>
-                                    <option value="100">100</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select name="teamB_player_count">
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option value="75">75</option>
-                                    <option value="100">100</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Order</td>
-                            <td>
-                                <select name="teamA_order">
-                                    <option value="manual">Manual</option>
-                                    <option value="best">Best</option>
-                                    <option value="worst">Worst</option>
-                                    <option value="random">Random</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select name="teamB_order">
-                                    <option value="manual">Manual</option>
-                                    <option value="best">Best</option>
-                                    <option value="worst">Worst</option>
-                                    <option value="random">Random</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                    <br />
-                    <button type="submit">Generate</button>
+                        <div class="btn-container">
+                            <button class="arrow-btn" onclick="previousStep()">
+                                <img
+                                    src="../assets/icons/icon_arrow-left.svg"
+                                    alt="Left arrow icon"
+                                    title="Previous step" />
+                            </button>
+                            <button class="full-screen-btn" onclick="toggleFullScreen()">
+                                <img
+                                    src="../assets/icons/icon_full-screen.svg"
+                                    alt="Full screen icon"
+                                    title="Toggle full screen" />
+                            </button>
+                            <button class="arrow-btn" onclick="nextStep()">
+                                <img
+                                    src="../assets/icons/icon_arrow-right.svg"
+                                    alt="Right arrow icon"
+                                    title="Next step" />
+                            </button>
+                        </div>
+
+                        <div class="team-options-container right">
+                            <select name="teamB_player_count">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="75">75</option>
+                                <option value="100">100</option>
+                            </select>
+                            <select name="teamB_order">
+                                <option value="manual">Manual</option>
+                                <option value="best">Best</option>
+                                <option value="worst">Worst</option>
+                                <option value="random">Random</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="apply-btn">Apply</button>
                 </form>
             </div>
             <div class="sidebar-container right"></div>

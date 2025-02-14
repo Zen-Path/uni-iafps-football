@@ -17,12 +17,7 @@ function toggleFullScreen() {
             : element.classList.add("full-screen"),
     );
 
-    const elements = [
-        BANNER_CONTAINER,
-        SIDEBAR_CONTAINER_LEFT,
-        SIDEBAR_CONTAINER_RIGHT,
-        document.getElementById("teamForm"),
-    ];
+    const elements = [BANNER_CONTAINER, SIDEBAR_CONTAINER_LEFT, SIDEBAR_CONTAINER_RIGHT];
 
     elements.forEach(
         (element) => (element.style.display = fullScreenStatus ? "block" : "none"),
