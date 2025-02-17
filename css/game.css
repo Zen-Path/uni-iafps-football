@@ -25,20 +25,22 @@
     --team-form-height: 85px;
 }
 
+body {
+    font-size: 16px;
+    background: linear-gradient(135deg, var(--clr-surface-b0), var(--clr-surface-a0));
+}
+
 #content {
     display: grid;
     grid-template-columns: auto 1fr auto;
 
-    min-height: 100vh;
     overflow-x: auto;
     gap: 20px;
     padding: var(--content-padding-vertical) var(--content-padding-horizontal);
-
-    background: linear-gradient(135deg, var(--clr-surface-b0), var(--clr-surface-a0));
 }
 
 #content.full-screen {
-    grid-template-columns: auto;
+    display: block;
 }
 
 /* BANNER */
@@ -56,6 +58,7 @@
 }
 
 .badge.left {
+    flex-direction: row;
     background: linear-gradient(
         90deg,
         var(--clr-surface-a10) 0%,
@@ -65,6 +68,7 @@
 }
 
 .badge.right {
+    flex-direction: row-reverse;
     background: linear-gradient(
         90deg,
         var(--clr-surface-b20) 0%,
@@ -78,6 +82,7 @@
 
     font-size: 25px;
     font-weight: bold;
+    line-height: 1.2;
     text-align: center;
     text-transform: uppercase;
     color: var(--clr-light-a0);
@@ -105,7 +110,7 @@
 .ribbon .icon {
     width: 50px;
     height: 50px;
-    margin: 5px 0px 5px 0px;
+    margin: 5px 0px 8px;
 }
 
 .ribbon p {
@@ -143,6 +148,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    height: 100%;
 }
 
 #board {
@@ -210,6 +217,8 @@
 /* FULL CARDS */
 
 .full-card {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -296,14 +305,11 @@
 
 /* PLAYER NAME */
 
-.full-card .first-name {
-    font-size: 24px;
-}
-
 .full-card .last-name {
-    font-size: 18px;
+    margin-top: 8px;
+
+    font-size: 20px;
     font-weight: bold;
-    margin-bottom: 10px;
     text-transform: uppercase;
 }
 
@@ -320,10 +326,6 @@
         width: 140px;
     }
 
-    .full-card .first-name {
-        font-size: 16px;
-    }
-
     .full-card .last-name {
         font-size: 14px;
     }
@@ -336,28 +338,37 @@
     flex-direction: row;
     justify-content: space-between;
 
+    margin-top: 10px;
     width: 100%;
+
     user-select: none;
-
-    line-height: 1.2;
 }
 
-.stats-descriptions {
-    width: 80%;
-    text-align: left;
+.stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.stat-description {
+    font-size: 14px;
     text-transform: uppercase;
+
+    /* margin-bottom: 2px; */
 }
 
-#sidebar-left .stats-descriptions {
-    border-right: 3px solid var(--clr-primary-a10);
-}
-
-#sidebar-right .stats-descriptions {
-    border-right: 3px solid var(--clr-primary-b10);
-}
-
-.stats-values .value {
+.stat-value {
+    font-size: 18px;
     font-family: "Roboto Mono", sans-serif;
+    font-weight: bold;
+}
+
+#sidebar-left .stat-value {
+    color: var(--clr-primary-a0);
+}
+
+#sidebar-right .stat-value {
+    color: var(--clr-primary-b0);
 }
 
 @media (max-width: 1100px) {
@@ -365,6 +376,27 @@
         font-size: 12px;
     }
 }
+
+/* PLAYER STRENGTH */
+
+.player-strength {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+
+    color: white;
+    /* color: var(--clr-primary-a10); */
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* #sidebar-left .player-strength {
+    color: var(--clr-primary-a0);
+}
+
+#sidebar-right .player-strength {
+    color: var(--clr-primary-b0);
+} */
 
 /* MINI CARDS */
 

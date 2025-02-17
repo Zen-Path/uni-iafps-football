@@ -5,9 +5,8 @@
 
     /* Color A */
     --clr-primary-a0: #5c0b0b;
-    --clr-primary-a10: #922727;
-    --clr-primary-a20: #fff6f6;
-    --clr-primary-a30: #ec7571;
+    --clr-primary-a10: #6e0101;
+    --clr-primary-a20: #ec7571;
 
     --clr-surface-a0: #b72323;
     --clr-surface-a10: #a0153e;
@@ -23,7 +22,7 @@
 
     --clr-surface-b0: #4145ca;
     --clr-surface-b10: #24276e;
-    --clr-surface-b20: #4f56da;
+    --clr-surface-b20: #4970d1;
     --clr-surface-b30: #697fc2;
     --clr-primary-b40: #97adeb;
     --clr-surface-b50: #b8c1e1;
@@ -35,6 +34,7 @@
     border: none;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
+    line-height: 1.0;
 }
 
 a {

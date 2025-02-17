@@ -24,33 +24,24 @@ export class Player {
                 class="profile-picture"
                 src="${this.profilePicturePath}"
                 alt="${this.fullName}"
+                title="${this.fullName}"
                 draggable="false">
             </div>
 
-            <p class="first-name">${this.firstName}</p>
             <p class="last-name">${this.lastName}</p>
 
             <div class="stats-container">
-                <div class="stats-descriptions">
-                    ${Object.keys(this.stats)
-                        .map(
-                            (description) => `
-                        <p class="description">${description}</p>
-                    `,
-                        )
-                        .join("\n")}
-                </div>
-
-                <div class="stats-values">
-                    ${Object.values(this.stats)
-                        .map(
-                            (value) => `
-                        <p class="value">${String(value).padStart(2, 0)}</p>
-                    `,
-                        )
-                        .join("\n")}
-                </div>
+                ${Object.entries(this.stats)
+                    .map(
+                        ([description, value]) => `
+                    <div class="stat">
+                        <p class="stat-description" title="${description}">${description.slice(0,3)}</p>
+                        <p class="stat-value">${String(value).padStart(2, 0)}</p>
+                    </div>
+                `).join("\n")}
             </div>
+
+            <p class="player-strength" title="Player Strength">${Math.floor(Math.random() * 100)}</p>
         `;
 
         this.fullCardElem = cardElem;
