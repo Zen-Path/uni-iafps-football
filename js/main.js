@@ -5,13 +5,46 @@ import { DEFAULT_PLAYERS } from "./players.js";
 const BANNER_CONTAINER = document.getElementById(TeamBanner.BANNER_CONTAINER_ID);
 const SIDEBAR_LEFT = document.body.querySelector("#sidebar-left");
 const SIDEBAR_RIGHT = document.body.querySelector("#sidebar-right");
+const BOARD = document.getElementById("board");
+const MINI_CARD_CONTAINER = document.getElementById("mini-card-container");
+
+// TODO: rewrite once logic is discussed
+// prettier-ignore
+const POSITIONS = {
+    5: [
+        [50, 14],
+
+        [24, 32],
+
+        [50, 28],
+        [50, 42],
+
+        [24, 32],
+    ],
+    10: [
+        [50, 14],
+
+        [24, 20],
+        [24, 34],
+
+        [39, 26],
+        [39, 44],
+
+        [50, 35],
+
+        [39, 26],
+        [39, 44],
+
+        [24, 20],
+        [24, 34],
+    ],
+};
 
 let fullScreenStatus = false;
 
 function toggleFullScreen() {
     const content = document.getElementById("content");
-    const board = document.getElementById("board");
-    [content, board].forEach((element) =>
+    [content, BOARD].forEach((element) =>
         fullScreenStatus
             ? element.classList.remove("full-screen")
             : element.classList.add("full-screen"),
@@ -34,7 +67,7 @@ function previousStep() {
     console.log("Previous step....");
 }
 
-function generatePlayers(teams, countA, countB, teamBanner) {
+function setup(teams, countA, countB, teamBanner) {
     const players = getUniqueRandomElements(DEFAULT_PLAYERS, countA + countB);
     teams[0].players = players.slice(0, countA);
     teams[1].players = players.slice(countA);
@@ -56,6 +89,31 @@ function generatePlayers(teams, countA, countB, teamBanner) {
             teamBanner.updateSuccessRate();
         });
     });
+
+    while (MINI_CARD_CONTAINER.children[0]) {
+        MINI_CARD_CONTAINER.removeChild(MINI_CARD_CONTAINER.children[0]);
+    }
+
+    teams.forEach((team) => {
+        team.players.forEach((player, i) => {
+            const miniCardElem = document.createElement("div");
+            miniCardElem.classList.add("mini-card", team.side);
+
+            const [top, left] = POSITIONS[team.players.length][i];
+            miniCardElem.style.top =
+                i < (team.players.length + 1) / 2 ? `${top}%` : `${100 - top}%`;
+
+            miniCardElem.style.left =
+                team.side === Team.SIDE.LEFT ? `${left}%` : `${100 - left}%`;
+
+            const profilePictureElem = document.createElement("img");
+            profilePictureElem.src = player.profilePicturePath;
+            profilePictureElem.title = `${player.firstName} ${player.lastName}`;
+
+            miniCardElem.append(profilePictureElem);
+            MINI_CARD_CONTAINER.append(miniCardElem);
+        });
+    });
 }
 
 function main() {
@@ -67,7 +125,7 @@ function main() {
     const teamBannerElem = teamBanner.create();
     BANNER_CONTAINER.appendChild(teamBannerElem);
 
-    generatePlayers(teams, 5, 5, teamBanner);
+    setup(teams, 10, 5, teamBanner);
 
     document.getElementById("teamForm").addEventListener("submit", function (event) {
         event.preventDefault();
@@ -84,12 +142,7 @@ function main() {
             },
         };
 
-        generatePlayers(
-            teams,
-            teamData.teamA.playerCount,
-            teamData.teamB.playerCount,
-            teamBanner,
-        );
+        setup(teams, teamData.teamA.playerCount, teamData.teamB.playerCount, teamBanner);
     });
 }
 
