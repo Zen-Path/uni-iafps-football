@@ -3,8 +3,8 @@ import { Team, TeamBanner, DEFAULT_TEAMS } from "./teams.js";
 import { DEFAULT_PLAYERS } from "./players.js";
 
 const BANNER_CONTAINER = document.getElementById(TeamBanner.BANNER_CONTAINER_ID);
-const SIDEBAR_CONTAINER_LEFT = document.body.querySelector(".sidebar-container.left");
-const SIDEBAR_CONTAINER_RIGHT = document.body.querySelector(".sidebar-container.right");
+const SIDEBAR_LEFT = document.body.querySelector("#sidebar-left");
+const SIDEBAR_RIGHT = document.body.querySelector("#sidebar-right");
 
 let fullScreenStatus = false;
 
@@ -17,7 +17,7 @@ function toggleFullScreen() {
             : element.classList.add("full-screen"),
     );
 
-    const elements = [BANNER_CONTAINER, SIDEBAR_CONTAINER_LEFT, SIDEBAR_CONTAINER_RIGHT];
+    const elements = [BANNER_CONTAINER, SIDEBAR_LEFT, SIDEBAR_RIGHT];
 
     elements.forEach(
         (element) => (element.style.display = fullScreenStatus ? "block" : "none"),
@@ -40,16 +40,16 @@ function generatePlayers(teams, countA, countB, teamBanner) {
     teams[1].players = players.slice(countA);
 
     const leftSidebarElem = teams[0].createSidebar();
-    while (SIDEBAR_CONTAINER_LEFT.children[0]) {
-        SIDEBAR_CONTAINER_LEFT.removeChild(SIDEBAR_CONTAINER_LEFT.children[0]);
+    while (SIDEBAR_LEFT.children[0]) {
+        SIDEBAR_LEFT.removeChild(SIDEBAR_LEFT.children[0]);
     }
-    SIDEBAR_CONTAINER_LEFT.appendChild(leftSidebarElem);
+    SIDEBAR_LEFT.appendChild(leftSidebarElem);
 
     const rightSidebarElem = teams[1].createSidebar();
-    while (SIDEBAR_CONTAINER_RIGHT.children[0]) {
-        SIDEBAR_CONTAINER_RIGHT.removeChild(SIDEBAR_CONTAINER_RIGHT.children[0]);
+    while (SIDEBAR_RIGHT.children[0]) {
+        SIDEBAR_RIGHT.removeChild(SIDEBAR_RIGHT.children[0]);
     }
-    SIDEBAR_CONTAINER_RIGHT.appendChild(rightSidebarElem);
+    SIDEBAR_RIGHT.appendChild(rightSidebarElem);
 
     players.forEach((player) => {
         player.fullCardElem.addEventListener("click", () => {

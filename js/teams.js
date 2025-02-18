@@ -23,14 +23,12 @@ export class Team {
         this.positions = [];
         this.winningChance = 50.0;
 
-        this.sidebarId = `sidebar-${this.side}`;
         this.sidebarElem = null;
     }
 
     createSidebar() {
         const sidebarElem = document.createElement("div");
-        sidebarElem.classList.add("sidebar", "hidden-scrollable");
-        sidebarElem.id = `sidebar-${this.side}`;
+        sidebarElem.classList.add("full-cards-container", "hidden-scrollable");
 
         sidebarElem.append(...this.getFullCards());
         this.sidebarElem = sidebarElem;
