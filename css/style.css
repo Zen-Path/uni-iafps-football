@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Resources */
+
+@font-face {
+    font-family: "Carter One";
+    src: url("../assets/fonts/CarterOne-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
