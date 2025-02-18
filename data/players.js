@@ -1071,8 +1071,4 @@ export const PLAYERS_DATA = [
         imageUrl: "https://www.sportsbase.io/images/people/123231.png",
         imageName: "ardian-ismajli.png",
     },
-
-
-
-
 ];

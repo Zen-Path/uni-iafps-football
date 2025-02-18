@@ -1,4 +1,5 @@
 import { TEAMS_DATA } from "../data/teams.js";
+import { PlayerCard } from "./players.js";
 
 export class Team {
     static SIDE = {
@@ -36,7 +37,7 @@ export class Team {
     }
 
     getFullCards() {
-        return this.players.map((player) => player.createFullCard());
+        return this.players.map((player) => new PlayerCard(player).create());
     }
 
     // TODO: improve this logic

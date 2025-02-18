@@ -27,11 +27,11 @@ function toggleFullScreen() {
 }
 
 function nextStep() {
-    console.log("Next step....")
+    console.log("Next step....");
 }
 
 function previousStep() {
-    console.log("Previous step....")
+    console.log("Previous step....");
 }
 
 function generatePlayers(teams, countA, countB, teamBanner) {

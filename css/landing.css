@@ -18,11 +18,10 @@ h1 {
     text-align: center;
     text-transform: uppercase;
     line-height: 1.1;
-    letter-spacing: 2%;
 
-    --text-outline-color: var(--clr-primary-a30);
+    --text-outline-color: var(--clr-primary-a20);
     --text-outline-size: 2px;
-    color: var(--clr-primary-a20);
+    color: white;
     text-shadow:
         calc(-1 * var(--text-outline-size)) calc(-1 * var(--text-outline-size)) 0
             var(--text-outline-color),

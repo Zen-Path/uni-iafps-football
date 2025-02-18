@@ -47,7 +47,6 @@ body {
     display: block;
 }
 
-
 /* SIDEBAR */
 
 #sidebar-left,
@@ -57,7 +56,8 @@ body {
     Since the cards have a slight margin for the outline, we need to increase the
     bottom padding for consistency.
     */
-    padding: var(--sidebar-padding-vertical) var(--sidebar-padding-horizontal) calc(var(--sidebar-padding-vertical) + var(--full-card-outline-size));
+    padding: var(--sidebar-padding-vertical) var(--sidebar-padding-horizontal)
+        calc(var(--sidebar-padding-vertical) + var(--full-card-outline-size));
     border-radius: 20px;
 }
 
